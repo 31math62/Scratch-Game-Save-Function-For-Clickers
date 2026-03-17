@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Explanation | Technical Documentation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            200: '#bae0fd',
+                            500: '#007bff',
+                            600: '#0062cc',
+                            700: '#004a99',
+                            900: '#031b33',
+                        },
+                        neutral: {
+                            850: '#1f2937',
+                            950: '#0a0a0a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #F8F8F8;
+            color: #333333;
+            scroll-behavior: smooth;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+        }
+        .code-container {
+            background: #282C34;
+            color: #ABB2BF;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+        .code-header {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 8px 16px;
+            display: flex;
+            gap: 6px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .dot { width: 12px; height: 12px; border-radius: 50%; }
+        .dot-red { background: #ff5f56; }
+        .dot-yellow { background: #ffbd2e; }
+        .dot-green { background: #27c93f; }
+        
+        .section-animate {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .section-animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .accent-gradient {
+            background: linear-gradient(135deg, #007bff 0%, #00d2ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Custom scrollbar for code */
+        pre::-webkit-scrollbar {
+            height: 8px;
+            width: 8px;
+        }
+        pre::-webkit-scrollbar-track {
+            background: #282C34;
+        }
+        pre::-webkit-scrollbar-thumb {
+            background: #4b5263;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="py-12 px-6 md:py-20 text-center">
+        <div class="max-w-4xl mx-auto">
+            <span class="inline-block px-4 py-1.5 mb-4 text-xs font-bold tracking-widest uppercase text-brand-600 bg-brand-100 rounded-full">Documentation</span>
+            <h1 class="text-5xl md:text-7xl font-display font-bold tracking-tight text-neutral-900 mb-6">
+                Code <span class="accent-gradient">Explanation</span>
+            </h1>
+            <p class="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
+                A technical breakdown of the logic, architecture, and implementation details of the provided source material.
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 pb-24">
+        
+        <!-- Section 1: Original Code -->
+        <section id="original-code" class="section-animate mb-16">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="h-8 w-1.5 bg-brand-500 rounded-full"></div>
+                <h2 class="text-2xl font-display font-bold text-neutral-900">Original Code</h2>
+            </div>
+            
+            <div class="code-container shadow-2xl">
+                <div class="code-header">
+                    <div class="dot dot-red"></div>
+                    <div class="dot dot-yellow"></div>
+                    <div class="dot dot-green"></div>
+                    <span class="ml-4 text-xs font-mono text-gray-400">scratch_logic.png</span>
+                </div>
+                <div class="p-6 overflow-x-auto">
+                    <div class="mb-4">
+                        <img src='https://opal.google/board/blobs/da71d01d-d1ad-4a8f-bf1b-08558520b8b2' alt='Visual representation of the Scratch code logic' class="rounded-lg border border-neutral-700/50 w-full h-auto" />
+                    </div>
+                    <pre class="font-mono text-sm leading-relaxed"><code class="language-scratch">
+// Scratch logic visualization provided above
+// The blocks handle data serialization, 
+// list management, and user-triggered 
+// save/load sequences.
+                    </code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Explanation -->
+        <section id="explanation" class="section-animate">
+            <div class="flex items-center gap-3 mb-8">
+                <div class="h-8 w-1.5 bg-brand-500 rounded-full"></div>
+                <h2 class="text-2xl font-display font-bold text-neutral-900">Analysis & Breakdown</h2>
+            </div>
+
+            <!-- Subsection 2.1: Detailed Breakdown -->
+            <div class="glass-card rounded-3xl p-8 md:p-10 mb-8 transition-all hover:shadow-xl">
+                <div class="flex items-center gap-2 mb-6 text-brand-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    <h3 class="text-xl font-display font-bold">Detailed Technical Breakdown</h3>
+                </div>
+                
+                <div class="space-y-8 text-gray-700 leading-relaxed">
+                    <div class="group">
+                        <h4 class="font-bold text-neutral-900 mb-2 flex items-center gap-2">
+                            <span class="w-6 h-6 flex items-center justify-center bg-brand-500 text-white text-[10px] rounded-md">01</span>
+                            Programming Language and Environment
+                        </h4>
+                        <p class="pl-8">The code is written in <strong>Scratch</strong>, a visual block-based programming language. It utilizes a sophisticated set of custom blocks, lists, and variables to manage <strong>data persistence</strong> within a project—most likely a clicking game context.</p>
+                    </div>
+
+                    <div class="group">
+                        <h4 class="font-bold text-neutral-900 mb-2 flex items-center gap-2">
+                            <span class="w-6 h-6 flex items-center justify-center bg-brand-500 text-white text-[10px] rounded-md">02</span>
+                            Application Initialization
+                        </h4>
+                        <p class="pl-8">The script initializes by resetting the environment upon the <code>Green Flag</code> event. It hides and purges a list named <strong>Save Code</strong> and centers the sprite, ensuring a deterministic clean state for every session.</p>
+                    </div>
+
+                    <div class="group">
+                        <h4 class="font-bold text-neutral-900 mb-2 flex items-center gap-2">
+                            <span class="w-6 h-6 flex items-center justify-center bg-brand-500 text-white text-[10px] rounded-md">03</span>
+                            Serialization Logic (The Saving Process)
+                        </h4>
+                        <p class="pl-8">When the sprite is interacted with, the program executes <strong>serialization</strong>. It aggregates three game variables—<code>Score</code>, <code>Clicks Per Second (CPS)</code>, and <code>Clicks Per Click (CPC)</code>—joining them into a single string. Hyphen delimiters (<code>-</code>) are used to separate values, and the resulting string is pushed to the <em>Save Code</em> list with instructions for manual user storage.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-gray-50 p-6 rounded-2xl border border-gray-100">
+                        <div>
+                            <h4 class="font-bold text-neutral-900 mb-2 text-sm uppercase tracking-wider">Input & Parsing</h4>
+                            <p class="text-sm">Triggered by the <code>C</code> key, the program prompts for the save code. A custom <strong>'lists: decode to list'</strong> block iterates through the string character-by-character, identifying hyphens to sort data into temporary buffers: <em>read code</em>, <em>read code CPS</em>, and <em>read code + per click</em>.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-neutral-900 mb-2 text-sm uppercase tracking-wider">Data Reconstruction</h4>
+                            <p class="text-sm">Post-parsing, the system converts raw character strings back into functional integers. Using <strong>'lists: read til reuse decode score cool'</strong>, it joins characters into numerical values, re-assigning them to the primary game state variables.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-blue-50 border-l-4 border-brand-500 p-5 rounded-r-xl">
+                        <h4 class="font-bold text-brand-900 mb-1">Error Handling and Reliability</h4>
+                        <p class="text-sm text-brand-800 italic">"The system includes logic to check the length of the processed data. If the length is < 30, it uses an optimized decoding block; otherwise, it switches to a secondary method to manage performance bottlenecks."</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subsection 2.2: Simplified Summary -->
+            <div class="bg-neutral-900 rounded-3xl p-8 md:p-10 text-white shadow-2xl overflow-hidden relative">
+                <!-- Decorative background element -->
+                <div class="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-brand-500 opacity-20 blur-3xl rounded-full"></div>
+                
+                <div class="flex items-center gap-2 mb-8">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-brand-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                    <h3 class="text-xl font-display font-bold">Simplified Summary</h3>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
+                    <div>
+                        <div class="mb-6">
+                            <h5 class="text-brand-400 font-bold text-sm uppercase mb-2">Purpose</h5>
+                            <p class="text-gray-300">Creates a <strong>Save and Load</strong> feature for a game, turning progress into a text code players can copy/paste to resume their session.</p>
+                        </div>
+                        <div>
+                            <h5 class="text-brand-400 font-bold text-sm uppercase mb-2">How it Works</h5>
+                            <p class="text-gray-300">The game bundles your stats into a long line of text with dashes. When you paste it back, the computer acts as a detective, picking out the numbers between dashes to restore your score and speed.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white/5 p-6 rounded-2xl border border-white/10">
+                        <h5 class="text-brand-400 font-bold text-sm uppercase mb-4">Key Features</h5>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3 text-sm">
+                                <span class="mt-1 text-green-400">✓</span>
+                                <span><strong>Navigation:</strong> Uses lists to temporarily hold save code fragments.</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-sm">
+                                <span class="mt-1 text-green-400">✓</span>
+                                <span><strong>User Guidance:</strong> Provides clear keyboard instructions (Copy/Paste).</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-sm">
+                                <span class="mt-1 text-green-400">✓</span>
+                                <span><strong>Instant Sync:</strong> Variables update immediately upon successful decoding.</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-sm">
+                                <span class="mt-1 text-green-400">✓</span>
+                                <span><strong>Modular Logic:</strong> Uses custom blocks to keep the program organized.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Simple Intersection Observer for scroll animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.section-animate');
+            
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
